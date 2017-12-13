@@ -1,7 +1,13 @@
 module Model exposing (..)
 
+import Http
+
 
 -- MODEL
+
+
+type Msg 
+    = Response (Result Http.Error String)
 
 
 type alias Model =

@@ -12,6 +12,12 @@ productUrl = "https://96eg5oo6fb.execute-api.eu-west-1.amazonaws.com/Prod/api/v1
 
 
 
+sendProductsRequest : Flags -> Cmd Msg
+sendProductsRequest flags =
+    Http.send Model.Response (requestProducts flags)
+  
+
+
 encodeProductsPayload : Flags -> Encode.Value
 encodeProductsPayload flags = 
     Encode.object 
@@ -21,6 +27,11 @@ encodeProductsPayload flags =
         , ("previewImageWidth", Encode.string flags.previewImageWidth) 
         , ("language", Encode.string flags.language)
         ]   
+
+
+decodeProductItemList : String -> Decode.Decoder String
+decodeProductItemList str =
+  Decode.at ["productItemList"] Decode.string
 
 
 
