@@ -7,6 +7,7 @@ module Model exposing (..)
 type alias Model =
   { flags : Flags
   , urls : Urls
+  , response : String
   }
     
 
@@ -17,6 +18,7 @@ type alias Flags =
   , template : String
   , accessToken : String
   , previewImageWidth : String
+  , language : String
   }
 
 

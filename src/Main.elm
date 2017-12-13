@@ -11,7 +11,7 @@ import Json.Encode as Encode
 
 init : Flags -> ( Model, Cmd Msg )
 init flags =
-    ( Model flags (Urls xUrl),  getProducts (Model flags (Urls xUrl)) )
+    ( Model flags (Urls xUrl) "asd",  getProducts (Model flags (Urls xUrl) "") )
 
 
 
@@ -22,6 +22,7 @@ userEncoder model =
         , ("page", Encode.string model.flags.page) 
         , ("channel", Encode.string model.flags.channel) 
         , ("previewImageWidth", Encode.string model.flags.previewImageWidth) 
+        , ("language", Encode.string model.flags.language)
         ]   
 
 
@@ -29,7 +30,7 @@ postRequest : Model -> Http.Request String
 postRequest model = 
     Http.request 
         { method = "POST"
-        , headers = []
+        , headers = [ Http.header "Authorization" model.flags.accessToken ]
         , url = model.urls.product
         , body = model |> userEncoder |> Http.jsonBody
         , expect = Http.expectString
@@ -46,7 +47,7 @@ postRequest model =
 view : Model -> Html Msg
 view model =
     div []
-        [ text model.flags.vendorId 
+        [ text model.response
         , button [][ text "Click" ]
         ]
         
@@ -57,24 +58,24 @@ view model =
 
 
 type Msg 
-    = NewGif (Result Http.Error String)
+    = Response (Result Http.Error String)
 
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        NewGif (Ok newUrl) ->
-            (model, Cmd.none)
+        Response (Ok products) ->
+            ({ model | response = products }, Cmd.none)
 
-        NewGif (Err _) ->
+        Response (Err _) ->
             (model, Cmd.none)
 
 
 
 getProducts : Model -> Cmd Msg
 getProducts model =
-    Http.send NewGif (postRequest model)
+    Http.send Response (postRequest model)
   
 
 
