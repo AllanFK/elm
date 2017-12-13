@@ -27,6 +27,3 @@ type alias Urls =
 
   }
 
-xUrl : String
-xUrl = "https://96eg5oo6fb.execute-api.eu-west-1.amazonaws.com/Prod/api/v1/GetProducts"
-
