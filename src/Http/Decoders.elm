@@ -7,6 +7,7 @@ import Json.Decode.Pipeline exposing (..)
 
  
 
+
 -- DECODERS 
 
 
@@ -15,7 +16,6 @@ decodeProductItemList =
     decode ProductItemList
         |> required "productItemList" (Decode.list decodeProduct)
         
-
 
 
 

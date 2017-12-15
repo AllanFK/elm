@@ -5,7 +5,7 @@ import Html exposing (..)
 import Model exposing (..)
 import Http.Products exposing (..)
 import Ports exposing (..)
-
+import View.Templates exposing (getTemplate)
 
 
 
@@ -60,7 +60,9 @@ view : Model -> Html Msg
 view model =
     -- ul []
     --     (List.map (\l -> li [] [ text l ]) model.response.productItemList)
-    div [] [ text (toString model.response.productItemList) ]   
+    div [] [ getTemplate model.flags.template
+           , text (toString model.response.productItemList) 
+           ]   
 
 
 
