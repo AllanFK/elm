@@ -7,6 +7,9 @@ import Http.Products exposing (..)
 import Ports exposing (..)
 
 
+
+
+
 -- MAIN
 
 
@@ -58,6 +61,7 @@ view model =
     -- ul []
     --     (List.map (\l -> li [] [ text l ]) model.response.productItemList)
     div [] [ text (toString model.response.productItemList) ]   
+
 
 
 

@@ -6,7 +6,6 @@ import Http
 
 
 
-
 -- MSG
 
 
@@ -64,17 +63,17 @@ type alias Product =
   , pap : String
   , name : String
   -- , price : Price
-  -- , previewImageUrl : String
-  -- , albxLocation : String
-  -- , templateId : String
-  -- , sceneId : String
-  -- , imageSource : String
-  -- , cartChannel : String
-  -- , templateImageCount : Int
-  -- , usedImageIdList : List String
-  -- , productTranslation : Translation
-  -- , formattedGroupKey : String
-  -- , articleType : String
+  , previewImageUrl : String
+  , albxLocation : String
+  , templateId : String
+  , sceneId : String
+  , imageSource : String
+  , cartChannel : String
+  , templateImageCount : Int
+  , usedImageIdList : List String
+  -- -- , productTranslation : Translation
+  , formatGroupKey : String
+  , articleType : String
   -- , additionalData : Maybe
 }
 
