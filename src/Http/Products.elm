@@ -1,9 +1,10 @@
 module Http.Products exposing (..)
 
 import Http exposing (..)
-import Json.Decode as Decode
+import Json.Decode as Decode exposing (..)
 import Json.Encode as Encode
 import Model exposing (..)
+import Json.Decode.Pipeline exposing (..)
 
 
 
@@ -28,21 +29,24 @@ encodeProductsPayload flags =
         , ("language", Encode.string flags.language)
         ]   
 
+ 
 
-decodeProductItemList : String -> Decode.Decoder String
-decodeProductItemList str =
-  Decode.at ["productItemList"] Decode.string
+decodeProductItemList : Decoder ProductItemList
+decodeProductItemList =
+    map ProductItemList
+        (field "productItemList" (Decode.list string))
+        -- |> required "productItemsList" (Decode.list string)
+        -- |> required "marketingsTest" (Decode.maybe string)
+        -- |> required "launchDarklyData" (Decode.maybe string)
 
-
-
-requestProducts : Flags -> Http.Request String
+requestProducts : Flags -> Http.Request ProductItemList
 requestProducts flags = 
     Http.request 
         { method = "POST"
         , headers = [ Http.header "Authorization" flags.accessToken ]
         , url = productUrl
         , body = flags |> encodeProductsPayload |> Http.jsonBody
-        , expect = Http.expectString
+        , expect = Http.expectJson decodeProductItemList
         , timeout = Nothing
         , withCredentials = False
         }

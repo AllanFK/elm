@@ -3,6 +3,7 @@ module Main exposing (..)
 import Html exposing (..)
 import Model exposing (..)
 import Http.Products exposing (..)
+import Ports.Spelling exposing (..)
 
 
 
@@ -23,7 +24,7 @@ main =
 
 init : Flags -> ( Model, Cmd Msg )
 init flags =
-    ( Model flags (Urls productUrl) "asd",  sendProductsRequest flags)
+    ( Model flags (Urls productUrl) ["123"],  sendProductsRequest flags)
  
 
 
@@ -35,10 +36,10 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         Response (Ok products) ->
-            ({ model | response = products }, Cmd.none)
+            ({ model | response = ["123", "123123"] }, Cmd.none)
 
         Response (Err _) ->
-            (model, Cmd.none)
+            ({ model | response = ["error"] }, Cmd.none)
 
 
 
@@ -48,10 +49,8 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ text model.response
-        , button [][ text "Click" ]
-        ]
+    ul []
+        (List.map (\l -> li [] [ text l ]) model.response)
        
 
 
