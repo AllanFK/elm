@@ -1,13 +1,14 @@
 module Main exposing (..)
 
+
 import Html exposing (..)
 import Model exposing (..)
 import Http.Products exposing (..)
-import Ports.Spelling exposing (..)
-
+import Ports exposing (..)
 
 
 -- MAIN
+
 
 
 main : Program Flags Model Msg
@@ -22,24 +23,28 @@ main =
 
 
 
+
 init : Flags -> ( Model, Cmd Msg )
 init flags =
-    ( Model flags (Urls productUrl) ["123"],  sendProductsRequest flags)
+    ( Model flags (Urls productUrl) (ProductItemList []), sendProductsRequest flags)
  
+
 
 
 
 -- UPDATE
 
 
+
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        Response (Ok products) ->
-            ({ model | response = ["123", "123123"] }, Cmd.none)
+        Response (Ok response) ->
+            ({ model | response = response }, check response.productItemList)
 
         Response (Err _) ->
-            ({ model | response = ["error"] }, Cmd.none)
+            (model, Cmd.none)
+
 
 
 
@@ -47,15 +52,18 @@ update msg model =
 -- VIEW
 
 
+
 view : Model -> Html Msg
 view model =
-    ul []
-        (List.map (\l -> li [] [ text l ]) model.response)
-       
+    -- ul []
+    --     (List.map (\l -> li [] [ text l ]) model.response.productItemList)
+    div [] [ text (toString model.response.productItemList) ]   
+
 
 
 
 -- SUBSCRIPTIONS
+
 
 
 subscriptions : Model -> Sub Msg
