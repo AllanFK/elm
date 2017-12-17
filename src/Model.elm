@@ -1,17 +1,15 @@
 module Model exposing (..)
 
-import Http
+import Http 
 
 
 
+-- UNION TYPES
 
--- MSG
-
-
-
+ 
 type Msg 
   = Response (Result Http.Error ProductItemList)
-
+  | AddToCart
 
 
 
@@ -24,6 +22,8 @@ type alias Model =
   { flags : Flags
   , urls : Urls
   , response : ProductItemList
+  , addToCartResponse : AddToCartResponse
+  -- , route : Route
   }
 
 
@@ -42,6 +42,10 @@ type alias Urls =
   { product : String
   }
 
+
+type alias AddToCartResponse =
+  { url : String
+  }
 
 
 

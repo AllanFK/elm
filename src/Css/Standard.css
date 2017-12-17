@@ -1,0 +1,1036 @@
+/*---------------------------- Flexbox ---------------------------------------------*/
+#mainXsellFrontendWrapper{
+    flex-wrap: wrap;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    -ms-flex-pack: center;
+}
+
+
+/*---------------------------- Defaults --------------------------------------------*/
+.xsellfrontend-primary-color {
+    color: #FF6A13 !important;
+}
+
+/*---------------------------- Portrait Template ------------------------------------*/
+.xsellfrontend-standard-portrait-wrapper{
+    text-align:center;
+    min-width:140px;
+    max-width: 400px;
+    width: auto;
+    height:auto;
+    border: 1px solid #d8d8d8;
+    border-bottom: 2px solid #d8d8d8;
+    border-radius: 2px;
+    position: relative;
+    float: left;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    background-color: #e7e7e7;
+    color: #4c4242;
+    font-size: 12px;
+    overflow: hidden;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.xsellfrontend-standard-portrait-image-container{
+    width:100%;
+    height:140px;
+    -moz-transition: 0.6s ease;
+    -webkit-transition: 0.6s ease;
+    transition: 0.6s ease;
+    align-items: center;
+}
+
+
+.xsellfrontend-standard-portrait-image-container:hover,
+.xsellfrontend-standard-portrait-image-container-idleuser{
+    -moz-transform: scale(1.2,1.2);
+    -webkit-transform: scale(1.2,1.2);
+    transform: scale(1.2,1.2); 
+}
+
+
+.xsellfrontend-standard-portrait-text-container{
+    width: 100%;
+    height: 100%;
+    position:relative;
+    background-color:#fff;
+}
+
+.xsellfrontend-standard-portrait-text-container button.active.tertiary,
+.xsellfrontend-standard-landscape-text-container button.active.tertiary,
+.xsellfrontend-moreinfo button.active.tertiary{
+    background-color: #fff !important;
+    color: #38BFC4 !important;
+    transition: none !important;
+}
+
+.xsellfrontend-standard-portrait-text-container button.active.secondary,
+.xsellfrontend-standard-landscape-text-container button.active.secondary,
+.xsellfrontend-moreinfo button.active.secondary{
+    background-color: #fff !important;
+    color: #FF6A13 !important;
+    transition: none !important;
+}
+
+.xsellfrontend-standard-portrait-text-container-header{
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+    padding-top: 15px;
+    margin-bottom: -8px
+}
+
+.xsellfrontend-standard-portrait-text-container-header-description{
+    font-size: 11px;
+    margin-top: 10px;
+    min-height: 11px;
+}
+
+.xsellfrontend-standard-portrait-subheader{
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: -6px;
+}
+
+.xsellfrontend-standard-portrait-price{
+    /* color: #FF6A13; */
+    color: #4c4242;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.xsellfrontend-standard-portrait-add-to-basket-button{
+    position: relative !important;
+    margin-top: 20px !important;
+    width: 88% !important;
+    max-width: 170px;
+    height: 36px;
+    padding: 0 !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.xsellfrontend-standard-portrait-add-to-basket-button.secondary:hover,
+.xsellfrontend-moreinfo-add-to-cart-button.secondary:hover,
+.xsellfrontend-moreinfo-add-to-cart-button-seemore.secondary:hover {
+    background-color: #fff !important;
+    color: #FF6A13 !important;
+}
+
+.xsellfrontend-standard-portrait-add-to-basket-button.tertiary:hover,
+.xsellfrontend-moreinfo-add-to-cart-button.tertiary:hover,
+.xsellfrontend-moreinfo-add-to-cart-button-seemore.tertiary:hover {
+    background-color: #fff !important;
+    color: #38BFC4 !important;
+}
+
+.xsellfrontend-moreinfo-try-photo-button.tertiary:hover{
+    background-color: #fff !important;
+    color: #b5b2b2;
+}
+
+.xsellfrontend-standard-portrait-bottom-text{
+    position: relative;
+    margin-top: -3px;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    text-decoration: underline;
+    color: #86908F;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.xsellfrontend-standard-portrait-bottom-text-margin-top{
+    margin: 8px 0 10px 0;
+    display: block;
+}
+
+.xsellfrontend-standard-portrait-discountcode{
+    border: 1px solid #DDD2D2;
+    border-radius: 2px;
+    padding: 8px;
+    max-width: 170px;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 95%;
+}
+
+.xsellfrontend-standard-portrait-discountcode-code{
+    color: #FF6A13;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.swiper-container {
+        width: 500px;
+        height: 300px;
+        margin: 20px auto;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+/*---------------------------Landscape Template-----------------------------*/
+.xsellfrontend-standard-landscape-wrapper{
+    position:relative;
+    float: left;
+    margin-right: 15px;
+    text-align:center;
+    width: 354px;
+    min-height:210px;
+    border: 1px solid #d8d8d8;
+    border-bottom: 2px solid #d8d8d8;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    background-color: #e7e7e7;
+    font-size: 12px;
+    overflow:hidden;
+}
+
+.xsellfrontend-standard-landscape-image-container{
+    min-width: 210px;
+    min-height: 210px;
+    height: 100%;
+    position: relative;
+    float:left;
+    -moz-transition: 0.6s ease;
+    -webkit-transition: 0.6s ease;
+    transition: 0.6s ease;
+}
+
+.xsellfrontend-standard-landscape-image-container:hover{
+    -moz-transform: scale(1.2,1.2);
+    -webkit-transform: scale(1.2,1.2);
+    transform: scale(1.2,1.2); 
+}
+
+.xsellfrontend-standard-landscape-text-container{
+    width: 142px;
+    height: 100%;
+    min-height: 210px;
+    position:relative;
+    float: right;
+    background-color:#fff;
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.xsellfrontend-standard-landscape-text-container-header{
+    font-size: 14px;
+}
+
+.xsellfrontend-standard-landscape-subheader{
+    position: relative;
+    margin-top: 25px;
+    text-align: left;
+    width: 133px;
+}
+
+.xsellfrontend-standard-landscape-price{
+    color: #4c4242;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.xsellfrontend-standard-landscape-add-to-basket-button{
+    position: relative !important;
+    margin-top: 25px !important;
+    width: 127px;
+    height: 36px;
+    padding: 0 !important;
+}
+
+.xsellfrontend-standard-landscape-bottom-text{
+    position: absolute;
+    bottom: 10px;
+    right: 45px;
+    font-size: 14px;
+    text-decoration: underline;
+    color: #86908F;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.xsellfrontend-standard-landscape-discountcode{
+    margin-top: 5px;
+    background-color: #fff;
+    border: 1px solid #DDD2D2;
+    border-radius: 2px;
+    padding: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    max-width: 170px;
+    width: 95%;
+}
+
+.xsellfrontend-standard-landscape-discountcode-code{
+    color: #FF6A13;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.xsellfrontend-standard-landscape-discountcode-subheader{
+    /*margin-top: 10px;*/
+}
+
+/*------------------------------ Error Templates------------------------*/
+.xsellfrontend-error-template{
+    width:inherit;
+    height:inherit;
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #FF6A13;
+    color: white;
+    display: block;
+    max-height: 200px;
+    overflow: auto;
+}
+
+.xsellfrontend-error-template > div {
+    margin-top: 5px;
+}
+
+
+
+/*------------------------------ Main css ------------------------------*/
+
+.xsellfrontend-carousel-main-wrapper{
+    height: 100px;
+}
+
+.xsellfrontend-highlight{
+    font-weight: bold;
+    /* color: #FF6A13; */
+}
+
+.hover{
+    cursor: pointer;
+}
+
+.xsellfrontend-moreinfo-close{
+    cursor: pointer;
+}
+
+.xsell-icon-success-small{
+    position: relative;
+    top: 3px;
+}
+
+.xsellfrontend-standard-wrapper{
+    text-align:center;
+    width:200px;
+    height:180px;
+}
+
+.xsellfrontend-standard-image-container{
+    width:inherit;
+    height:inherit;
+    border:0px solid gray;
+    margin-top: 15px;
+}
+
+.xsellfrontend-standard-subheader{
+    margin-top: 5px;
+}
+
+.xsellfrontend-standard-add-to-basket-button{
+    position: relative;
+    top: 15px;
+}
+
+/* standard WHITE template */
+.xsellfrontend-standard-image-container-white{
+    width:inherit;
+    height:inherit;
+    border:0px solid gray;
+    margin-top: -20px;
+}
+
+.xsellfrontend-standard-add-to-basket-button-white{
+    margin-top: 0px;
+}
+
+.xsellfrontend-moreinfo-wrapper{
+    position: fixed;
+    position: -ms-page;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2147483647;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    display: none;
+    background: rgba(0,0,0,.5);
+}
+
+.xsellfrontend-moreinfo,
+.xsellfrontend-moreinfo-seemore{
+    position: relative;
+    top: 200px;
+    margin: 0 auto;
+    width: 800px;
+    min-height: 455px;
+    height: auto;
+    background: #fff;
+    z-index: 2147483647;
+    /*box-shadow: 5px 5px 5px #ccc;*/
+    border-radius: 2px;
+    
+}
+
+.xsellfrontend-moreinfo-seemore{
+    width: 800px;
+    min-height: 584px;
+}
+
+.xsellfrontend-moreinfo-headline,
+.xsellfrontend-moreinfo-headline-seemore{
+    margin-top: -30px;
+    font-size: 30px;
+    font-weight: 200;
+    color: #455a64;
+    position: relative;
+    left: 425px;
+    text-align:left;
+    width: 350px;
+    line-height: 30px;
+}
+
+.xsellfrontend-moreinfo-subtitle{
+    position: relative;
+    left: 425px;
+    top: -19px;
+    text-align:left;
+    font-weight: 200;
+    color: #455a64;
+    font-size: 18px;
+    width: 350px;
+    min-height: 23px;
+}
+
+.xsellfrontend-moreinfo-ingress{
+    position: relative;
+    left: 425px;
+    top: 0px;
+    margin-top: -16px;
+    font-size: 14px;
+    color: #6a6363;
+    text-align:left;
+    width: 330px;
+    line-height: 16px;
+    display: block;
+}
+
+.xsellfrontend-moreinfo-description,
+.xsellfrontend-moreinfo-description-seemore{
+    text-align: left;
+    font-size: 14px;
+    position: relative;
+    top: 10px;
+    left: 423px;
+    max-width: 360px;
+}
+
+.xsellfronend-moreinfo-description-bullets{
+    display:table-cell;
+    width: 305px;
+    position:relative;
+    left:5px;
+}
+
+.xsellfrontend-moreinfo-description ul li{
+    line-height: 15px;
+    max-width: 360px;
+    padding: 0;
+    margin: 0;
+}
+
+.xsellfrontend-standard-moreinfo-image-container{
+    width: 370px;
+    height: 370px;
+    margin-left: -205px;
+    position: relative;
+    left: 50%;
+    margin-top:20px;
+}
+
+.xsellfrontend-standard-moreinfo-image-container,
+.xsellfrontend-standard-moreinfo-image-container-seemore{
+    position: absolute;
+    margin-left: 0;
+    margin-top: -1px;
+    width: 370px;
+    height: 370px;
+    left: 30px;
+    top: 50px;
+}
+
+.xsellfrontend-moreinfo-close{
+    position: absolute;
+    right: 5px;
+    top: 8px;
+}
+
+.xsellfrontend-moreinfo-close i{
+    color: #868686 !important;
+}
+
+.xsellfrontend-moreinfo-add-to-cart-button{
+    position: relative;
+    left: 426px;   
+    top: 0px;
+    margin-top: 15px;
+    width: 188px;
+    height: 48px;
+    font-size: 13px !important;
+    color: #ffffff;
+    font-weight: 200 !important;
+    padding: 0 !important;
+}
+
+.xsellfrontend-moreinfo-discount-price,
+.xsellfrontend-moreinfo-discount-price-seemore{
+    font-size: 30px;
+    /* color: #FF6A13; */
+    position: relative;
+    top: 25px;
+    text-align: left;
+    left: 425px;
+}
+
+
+#xsellfrontendMoreinfoDiscountPriceSeemore{
+    font-size: 30px;
+    /* color: #FF6A13; */
+}
+
+.xsellfrontend-moreinfo-discount-bottom,
+.xsellfrontend-moreinfo-discount-bottom-seemore{
+    border-top: 0px solid #e5e5e5; 
+    width: 88%;
+    position: relative;
+    top: 0px;
+    left: 425px;
+    height: 32px;
+    padding-top: 9px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+
+/*.xsellfrontend-moreinfo-discount-bottom > span {
+    color: #FF6A13; 
+    text-transform: uppercase;
+}*/
+
+
+
+
+.xsellfrontend-price-text,
+.xsellfrontend-moreinfo-discount-price-linethrough{
+    color:#000;
+    font-size:14px;
+    position: relative;
+    top: 0px;
+    
+}
+
+.xsellfrontend-moreinfo-discount-price-linethrough{
+    text-decoration:line-through;
+    font-size:12px;
+    font-weight: 200;
+}
+
+.xsellfrontend-moreinfo-discount-price-linethrough-moneysign{
+    font-size:12px;
+    font-weight: 200;
+    color: #000;
+}
+
+.xsellfrontend-moreinfo-discount-percent{
+    font-size: 13px;
+    color: #FF6A13;
+    position: relative;
+    left: 49px;
+    top: 3px;
+    text-align: left;
+}
+
+.xsellfrontend-icon-success-small{
+    position: relative;
+    top: 3px;
+}
+
+.xsellfrontend-moreinfo-overlay,
+.xsellfrontend-moreinfo-overlay-added-to-cart{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #000;
+    opacity: 0.25;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+
+.xsellfrontend-moreinfo-overlay-text,
+.xsellfrontend-moreinfo-overlay-text-added-to-cart{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 102%;
+    height: 150px;
+    padding-top: 46.5%;
+    /*padding-left: 5%;*/
+    /*margin-left: 3%;
+    margin-top: 44%;*/
+    z-index: 11;
+    color:#fff;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    display: block;
+}
+
+.xsellfrontend-moreinfo-overlay-added-to-cart,
+.xsellfrontend-moreinfo-overlay-text-added-to-cart{
+    cursor: default;
+}
+
+.xsellfrontend-moreinfo-overlay-text:hover,
+.xsellfrontend-moreinfo-overlay-text-idleuser{ 
+    opacity: 1;
+    transform: translate3d( 0, 0, 0);
+}
+
+.xsellfrontend-moreinfo-overlay-text > i {
+    position: relative;
+    bottom: -2px;
+}
+
+.xsellfrontend-moreinfo-box-circle{
+    position:relative;
+    left: 50%;
+    margin-left: -36px;
+    margin-top: -50px;
+    width: 73px;
+    height: 73px;
+    top: -36px;
+}
+.xsellfrontend-moreinfo-box-circle.ngdialog-box-circle-upload{
+    position:relative;
+    top: -36px;
+}
+.xsellfrontend-moreinfo-box-circle-photos,
+.xsellfrontend-moreinfo-box-circle-none{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+.xsellfrontend-moreinfo-box-circle-none{
+    background-color: #38BFC4;
+    background-image: none;
+}
+.xsellfrontend-moreinfo-box-circle-icon{
+    text-align:center;
+    margin-top: 17px;
+}
+.xsellfrontend-moreinfo-box-circle-icon i{
+    font-size:31px;
+    color: #fff;
+}
+
+.xsellfrontend-moreinfo-popup-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.xsellfrontend-moreinfo-overlay-search-icon{
+    display: none;
+}
+
+.xsellfrontend-viewmore-images,
+.xsellfrontend-viewmore-images-no-loader{
+    position: relative;
+    float:left;
+    cursor:default;
+    margin-left: 20px;
+    width: 100px; 
+    height: 100px; 
+    background: url('../graphic/xsellLoader.gif') center center / 40px 40px no-repeat;
+}
+
+.xsellfrontend-viewmore-images-no-loader{
+    background: none !important;
+}
+
+.xsellfrontend-viewmore-images:hover,
+.xsellfrontend-viewmore-images-border{
+    border: 2px solid #FF6A13;
+}
+
+.xsellfrontend-carousel-wrapper,
+.xsellfrontend-carousel-wrapper-checkout,
+.xsellfrontend-carousel-wrapper-checkout-mug{
+    position: absolute;
+    left: 110px; 
+    bottom: 20px;
+    margin-top: 20px;
+    width: 580px;
+    overflow-x:hidden;
+}
+
+.xsellfrontend-carousel-try-different-photo-text{
+    display: block;
+    position: absolute;
+    bottom: 138px;
+    width: 739px;
+    left: 29px;
+    border-bottom: 1px solid lightgray;
+    text-align: center;
+}
+
+.xsellfrontend-carousel-try-different-photo-text-span{
+    background-color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    top: 5px;
+}
+
+.xsellfrontend-carousel-nav-prev{
+    transform: scaleX(-1); 
+    position:absolute;
+    bottom: 60px;
+    left: 74px;
+    display: block;
+}
+
+.xsellfrontend-carousel-nav-next{
+    position:absolute;
+    bottom: 60px;
+    right: 73px;
+    display: block;
+}
+
+.xsellfrontend-carousel-nav-prev i,
+.xsellfrontend-carousel-nav-next i{
+    color: #FF6A13;
+}
+
+.xsellfrontend-carousel-nav-prev:hover,
+.xsellfrontend-carousel-nav-next:hover{
+    cursor: pointer;
+}
+
+.slick-disabled i {
+    color: lightgray;
+}
+
+.slick-disabled:hover {
+    cursor:default;
+}
+
+.xsellfrontend-moreinfo-try-photo-button{
+    display: none;
+}
+
+.xsellfrontend-marketingtext-title{
+    font-size: 45px;
+    color: #555555;
+}
+
+.xsellfrontend-marketingtext-ingress,
+.xsellfrontend-marketingtext-title{
+    text-align: center;
+}
+
+.xsellfrontend-marketingtext-ingress{
+    margin-bottom: 25px;
+    display: block;
+    font-size: 18px;
+    color: #4D4343;
+}
+
+
+/* .ladda-label{
+    z-index:1 !important;
+} */
+
+/*----------------------------------------------------------Small view---------------------------------------------------------------*/
+
+@media screen and (max-height: 840px) {
+
+    .xsellfrontend-moreinfo {
+        top: 100px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .xsellfrontend-moreinfo-discount-bottom{
+        font-size: 13px;
+        top: -25px;
+    }
+
+    .xsellfrontend-marketingtext-title{
+        margin-bottom: 30px;
+        font-size: 24px;
+    }
+
+    .xsellfrontend-marketingtext-ingress{
+        display: none;
+    }
+
+    .xsellfrontend-moreinfo,
+    .xsellfrontend-moreinfo-seemore{
+        position: relative;
+        top: 105px;
+        margin: 0 auto;
+        width: 310px;
+        min-height: 626px;
+        height: auto;
+        background: #fff;
+        /*box-shadow: 5px 5px 5px #ccc;*/
+        border-radius: 2px;
+        border: 0px solid #d8d8d8;
+    }
+
+    .xsellfrontend-moreinfo-seemore{
+        min-height: 689px;
+    }
+
+    .xsellfrontend-moreinfo-headline{
+        font-size: 18px;
+        font-weight: 300;
+        left: 0px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .xsellfrontend-moreinfo-ingress{
+        display: none;
+    }
+
+    .xsellfrontend-moreinfo-description{
+        position: relative;
+        margin-left: 20px;
+        margin-top: 25px;
+        font-size: 13px;
+        text-align: left;
+        line-height: 13px;
+        top: 0;
+        left: 0;
+    }
+
+    .xsellfrontend-moreinfo-description-seemore{
+        /*margin-top: 90px;*/
+    }
+
+    .xsellfrontend-moreinfo-description ul li{
+        line-height: 20px;
+    }
+
+    .xsellfrontend-standard-moreinfo-image-container{
+        width: 260px;
+        height: 260px;
+        margin-left: -130px;
+        position: relative;
+        top: 0px;
+        margin-top: -40px;
+        left: 50%;
+        border: 0px solid black;
+        z-index: 101;
+    }
+
+    .xsellfrontend-moreinfo-close{
+        position: absolute;
+        right: 5px;
+        top: 8px;
+    }
+
+    .xsellfrontend-moreinfo-close i{
+        color: #868686 !important;
+    }
+
+    .xsellfrontend-moreinfo-add-to-cart-button,
+    .xsellfrontend-moreinfo-add-to-cart-button-seemore,
+    .xsellfrontend-moreinfo-try-photo-button{
+        position: absolute !important;
+        bottom: 0px;
+        top: auto;
+        width: 142px;
+        height: 44px;
+        padding: 0;
+        width: 260px;
+        height: 48px;
+        right: 26px;
+        font-size: 12px !important;
+        color: #ffffff;
+        font-weight: 200;
+        left: 25px;
+        text-align: center;
+
+    }
+    
+    .xsellfrontend-moreinfo-add-to-cart-button-seemore{
+        bottom: 55px;
+    }
+
+    .xsellfrontend-moreinfo-try-photo-button{
+        position: absolute !important;
+        bottom: 0px;
+        display: block;
+        padding: 0 !important;
+    }
+
+    .xsellfrontend-moreinfo-discount-price{
+        position:relative;
+        top: 0px;
+        margin-top: 20px;
+        left: 24px;
+    }
+
+    .xsellfrontend-moreinfo-discount-bottom{
+        bottom: 75px;
+        text-align: left;
+        border-top: 0;
+        left: 24px;
+        top: -23px;
+    }
+
+    .xsellfrontend-moreinfo-discount-percent{
+        font-size: 13px;
+        color: #FF6A13;
+        position: relative;
+        left: 1px;
+        top: -3px;
+        text-align: center;
+    }
+    .xsellfrontend-moreinfo-overlay-search-icon{
+        position: relative;
+        top: 100px;
+        left: 50px;
+        display: block;
+    }
+
+    .xsellfrontend-moreinfo-overlay-search-icon i {
+        color: #fff;
+        text-shadow: 5px 5px 5px #ccc;
+    }
+
+    .xsellfrontend-carousel-wrapper,
+    .xsellfrontend-carousel-wrapper-checkout,
+    .xsellfrontend-carousel-wrapper-checkout-mug{
+        position: relative;
+        top: -42px;
+        margin-top:-337px;
+        visibility: hidden;
+        left: 25px;
+        width: 285px;
+        height: 0px;
+        margin-right: 0px;
+    }
+
+    .xsellfrontend-carousel-wrapper-checkout{
+        top: -50px;
+    }
+
+    .xsellfrontend-carousel-wrapper-checkout-mug{
+        top: -64px;
+    }
+
+    .xsellfrontend-carousel-nav-prev{
+        visibility: hidden !important;
+    }
+    .xsellfrontend-carousel-nav-next{
+        visibility: hidden !important;
+    }
+    .xsellfrontend-viewmore-images{
+        position: relative;
+        float:left;
+        cursor:default;
+        margin-left: 16px;
+        width: 75px; 
+        height: 75px; 
+        background: url('../graphic/xsellLoader.gif') center center / 40px 40px no-repeat;
+    }
+    .xsellfronend-moreinfo-description-bullets{
+        width: 255px;
+    }
+    .xsellfrontend-moreinfo-description-seemore{
+        margin-left:22px;
+    }
+    .xsellfrontend-viewmore-images-no-loader{
+        background: none !important;
+    }
+    .xsellfrontend-carousel-try-different-photo-text{
+        display: none;
+    }
+
+    .xsellfrontend-standard-portrait-image-container:hover{
+        -moz-transform: scale(1.0,1.0);
+        -webkit-transform: scale(1.0,1.0);
+        transform: scale(1.0,1.0); 
+    }
+
+    .xsellfrontend-moreinfo-overlay-text{
+        display: none;
+    }
+
+    .xsellfrontend-standard-portrait-wrapper{
+        min-width:225px;
+    }
+    
+    .xsellfrontend-standard-portrait-image-container{
+        height:225px;
+    }
+    
+}
+
+
+@media screen and (max-width: 400px) {
+    .xsellfrontend-standard-portrait-wrapper{
+        min-width:170px;
+    }
+    
+    .xsellfrontend-standard-portrait-image-container{
+        height:170px;
+    }
+}

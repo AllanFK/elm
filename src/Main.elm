@@ -2,10 +2,13 @@ module Main exposing (..)
 
 
 import Html exposing (..)
+import Html.Events exposing (..)
 import Model exposing (..)
 import Http.Products exposing (..)
+-- import Http.AddToCart exposing (..)
 import Ports exposing (..)
 import View.Templates exposing (getTemplate)
+ 
 
 
 
@@ -29,7 +32,11 @@ main =
 
 init : Flags -> ( Model, Cmd Msg )
 init flags =
-    ( Model flags (Urls productUrl) (ProductItemList []), sendProductsRequest flags)
+    ( Model flags 
+      (Urls productUrl) 
+      (ProductItemList []) 
+      (AddToCartResponse "url")
+    , sendProductsRequest flags)
  
 
 
@@ -43,13 +50,16 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         Response (Ok response) ->
-            ({ model | response = response }, check response.productItemList)
+            ( { model | response = response }, check response.productItemList )
 
         Response (Err _) ->
-            (model, Cmd.none)
+            ( model, Cmd.none )
 
+        AddToCart ->
+            ( model, Cmd.none )
 
-
+        
+       
 
 
 -- VIEW
@@ -60,9 +70,13 @@ view : Model -> Html Msg
 view model =
     -- ul []
     --     (List.map (\l -> li [] [ text l ]) model.response.productItemList)
-    div [] [ getTemplate model.flags.template
-           , text (toString model.response.productItemList) 
-           ]   
+    div [] 
+        -- (List.map (getTemplate model.flags.template) model.response.productItemList)
+        (List.map (getTemplate model) model.response.productItemList)
+        --    , text model.addToCartResponse.url
+        --    , br [] [] 
+        --    , button [ onClick AddToCart ] [ text "Add to cart" ]
+              
 
 
 
