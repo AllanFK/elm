@@ -5,7 +5,7 @@ import Html exposing (..)
 import Html.Events exposing (..)
 import Model exposing (..)
 import Http.Products exposing (..)
--- import Http.AddToCart exposing (..)
+import Http.AddToCart exposing (..)
 import Ports exposing (..)
 import View.Templates exposing (getTemplate)
  
@@ -55,8 +55,8 @@ update msg model =
         Response (Err _) ->
             ( model, Cmd.none )
 
-        AddToCart ->
-            ( model, Cmd.none )
+        AddToCart flags product ->
+            ( model, sendAddToCartRequest flags product )
 
         
        
@@ -68,16 +68,9 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    -- ul []
-    --     (List.map (\l -> li [] [ text l ]) model.response.productItemList)
     div [] 
-        -- (List.map (getTemplate model.flags.template) model.response.productItemList)
         (List.map (getTemplate model) model.response.productItemList)
-        --    , text model.addToCartResponse.url
-        --    , br [] [] 
-        --    , button [ onClick AddToCart ] [ text "Add to cart" ]
               
-
 
 
 

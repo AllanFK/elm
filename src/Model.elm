@@ -9,7 +9,7 @@ import Http
  
 type Msg 
   = Response (Result Http.Error ProductItemList)
-  | AddToCart
+  | AddToCart Flags Product
 
 
 

@@ -2,7 +2,8 @@ module View.Templates exposing (..)
 
 import Model exposing (..)
 import Html exposing (..)
-import Html.Attributes exposing (..)
+import Html.Attributes exposing (class)
+import Html.Events exposing (onClick)
 import Dict
 
 
@@ -27,20 +28,26 @@ getTemplate model =
 
 templates : Model -> Dict.Dict String (a -> Html Msg)
 templates model = Dict.fromList
-    [ ("standard-portrait", template1 model)
-    , ("standard-landscape", template2 model)
+    [ ("standard-portrait", standardPortrait model)
+    , ("standard-landscape", standardLandscape model)
     ]
 
 
 
 
 
-template1 : Model -> a -> Html Msg
-template1 model = \x -> div [ class "xsellfrontend-standard-portrait-wrapper" ][ text "template 1" ]
+standardPortrait : Model -> a -> Html Msg
+standardPortrait model = 
+    \product -> 
+        div [ class "xsellfrontend-standard-portrait-wrapper" ]
+            [ text "hejsa"
+            , br [][]
+            , button [ onClick (AddToCart model.flags product) ][ text "Add to cart"] 
+            ]
 
 
 
 
 
-template2 : Model -> a -> Html Msg
-template2 model = \x -> div [][ text "template 2" ]
+standardLandscape : Model -> a -> Html Msg
+standardLandscape model = \x -> div [][ text "template 2" ]
