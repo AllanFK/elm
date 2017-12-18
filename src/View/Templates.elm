@@ -40,7 +40,7 @@ standardPortrait : Model -> Product -> Html Msg
 standardPortrait model = 
     \product -> 
         div [ class "xsellfrontend-standard-portrait-wrapper" ]
-            [ text "hejsa"
+            [ text product.albxLocation
             , br [][]
             , button [ onClick (AddToCart model.flags product) ][ text "Add to cart"] 
             ]

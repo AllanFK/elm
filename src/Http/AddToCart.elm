@@ -62,6 +62,9 @@ encodeAddToCartPayload flags product =
         , ("channel", Encode.string flags.channel) 
         , ("previewImageUrl", Encode.string product.previewImageUrl) 
         , ("language", Encode.string flags.language)
+        , ("pap", Encode.string product.pap)
+        , ("page", Encode.string flags.page)
+        , ("vendorId", Encode.string flags.vendorId)
         ]  
 
 
