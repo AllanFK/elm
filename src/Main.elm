@@ -55,6 +55,12 @@ update msg model =
         Response (Err _) ->
             ( model, Cmd.none )
 
+        ATCResponse (Ok response) ->
+            ( model , Cmd.none )
+
+        ATCResponse (Err _) ->
+            ( model, Cmd.none )
+
         AddToCart flags product ->
             ( model, sendAddToCartRequest flags product )
 

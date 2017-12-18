@@ -13,7 +13,7 @@ import Dict
 -- TEMPLATES
 
 
-getTemplate : Model -> a -> Html Msg
+getTemplate : Model -> Product -> Html Msg
 getTemplate model = 
     case Dict.get model.flags.template (templates model) of 
         Nothing ->
@@ -26,7 +26,7 @@ getTemplate model =
 
 
 
-templates : Model -> Dict.Dict String (a -> Html Msg)
+templates : Model -> Dict.Dict String (Product -> Html Msg)
 templates model = Dict.fromList
     [ ("standard-portrait", standardPortrait model)
     , ("standard-landscape", standardLandscape model)
@@ -36,7 +36,7 @@ templates model = Dict.fromList
 
 
 
-standardPortrait : Model -> a -> Html Msg
+standardPortrait : Model -> Product -> Html Msg
 standardPortrait model = 
     \product -> 
         div [ class "xsellfrontend-standard-portrait-wrapper" ]
@@ -49,5 +49,5 @@ standardPortrait model =
 
 
 
-standardLandscape : Model -> a -> Html Msg
+standardLandscape : Model -> Product -> Html Msg
 standardLandscape model = \x -> div [][ text "template 2" ]

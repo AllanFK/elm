@@ -3,10 +3,9 @@ module Http.AddToCart exposing (..)
 
 import Http exposing (..)
 import Model exposing (..)
-import Http.Decoders exposing (..)
-import Http.Encoders exposing (..)
 import Json.Encode as Encode exposing (..)
-
+import Json.Decode as Decode exposing (..)
+import Json.Decode.Pipeline exposing (decode, required)
 
 
 
@@ -23,25 +22,34 @@ addToCartUrl = "https://96eg5oo6fb.execute-api.eu-west-1.amazonaws.com/Prod/api/
 
 sendAddToCartRequest : Flags -> Product -> Cmd Msg
 sendAddToCartRequest flags product =
-    Http.send Model.Response (requestAddToCart flags product)
+    Http.send Model.ATCResponse (requestAddToCart flags product)
   
 
 
 
 
 
-requestAddToCart : Flags -> Product -> Http.Request ProductItemList
+requestAddToCart : Flags -> Product -> Http.Request AddToCartResponse
 requestAddToCart flags product = 
     Http.request 
         { method = "POST"
         , headers = [ Http.header "Authorization" flags.accessToken ]
         , url = addToCartUrl
         , body = encodeAddToCartPayload flags product |> Http.jsonBody
-        , expect = Http.expectJson decodeProductItemList
+        , expect = Http.expectJson decodeAddToCart
         , timeout = Nothing
         , withCredentials = False
         }
 
+
+
+
+
+decodeAddToCart : Decoder AddToCartResponse
+decodeAddToCart =
+    decode AddToCartResponse
+        |> required "url" Decode.string
+        
 
 
 
@@ -54,4 +62,8 @@ encodeAddToCartPayload flags product =
         , ("channel", Encode.string flags.channel) 
         , ("previewImageUrl", Encode.string product.previewImageUrl) 
         , ("language", Encode.string flags.language)
-        ]   
+        ]  
+
+
+
+
