@@ -63,6 +63,7 @@ decodeProduct =
         |> required "assetId" Decode.string
         |> required "pap" Decode.string
         |> required "name" Decode.string
+        |> required "price" decodePrice
         |> required "previewImageUrl" Decode.string
         |> required "albxLocation" Decode.string
         |> required "templateId" Decode.string
@@ -71,9 +72,36 @@ decodeProduct =
         |> required "cartChannel" Decode.string
         |> required "templateImageCount" Decode.int
         |> required "usedImageIdList" (Decode.list Decode.string)
+        |> required "productTranslation" decodeTranslation
         |> required "formatGroupKey" Decode.string
         |> required "articleType" Decode.string
-        -- |> required "additionalData" (Decode.maybe string)
+
+        
+
+
+
+decodePrice : Decoder Price
+decodePrice =
+    decode Price
+        |> required "currencyCode" Decode.string
+        |> required "discountCode" Decode.string
+        |> required "subTotal" Decode.int
+        |> required "formattedSubTotal" Decode.string
+        |> required "formattedDiscount" Decode.string
+        |> required "formattedTotalPrice" Decode.string
+
+
+
+
+
+decodeTranslation : Decoder Translation
+decodeTranslation =
+    decode Translation
+        |> required "name" Decode.string
+        |> required "description" Decode.string
+        |> required "ingress" Decode.string
+        |> required "bullets" Decode.string
+        |> required "lang" Decode.string
 
 
 

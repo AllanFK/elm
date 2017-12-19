@@ -68,7 +68,7 @@ type alias Product =
   { assetId : String
   , pap : String
   , name : String
-  -- , price : Price
+  , price : Price
   , previewImageUrl : String
   , albxLocation : String
   , templateId : String
@@ -77,7 +77,7 @@ type alias Product =
   , cartChannel : String
   , templateImageCount : Int
   , usedImageIdList : List String
-  -- -- , productTranslation : Translation
+  , productTranslation : Translation
   , formatGroupKey : String
   , articleType : String
   -- , additionalData : Maybe
@@ -87,11 +87,11 @@ type alias Product =
 type alias Price =
   { currencyCode : String
   , discountCode : String
-  , discountPercent : Int
-  , discountAutoApply : Bool
+  -- , discountPercent : Int
+  -- , discountAutoApply : Bool
   , subTotal : Int
-  , discount : Int
-  , totalPrice : Int
+  -- , discount : Int
+  -- , totalPrice : Int
   , formattedSubTotal : String
   , formattedDiscount : String
   , formattedTotalPrice : String
