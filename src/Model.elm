@@ -8,8 +8,8 @@ import Http
 
  
 type Msg 
-  = Response (Result Http.Error ProductItemList)
-  | ATCResponse (Result Http.Error AddToCartResponse)
+  = ProductsResponse (Result Http.Error ProductItemList)
+  | AddToCartResponse (Result Http.Error AddToCartResult)
   | AddToCart Flags Product
 
 
@@ -22,8 +22,8 @@ type Msg
 type alias Model =
   { flags : Flags
   , urls : Urls
-  , response : ProductItemList
-  , addToCartResponse : AddToCartResponse
+  , productsResult : ProductItemList
+  , addToCartResult : AddToCartResult
   -- , route : Route
   }
 
@@ -44,8 +44,10 @@ type alias Urls =
   }
 
 
-type alias AddToCartResponse =
-  { url : String
+type alias AddToCartResult =
+  { cartUrl : String
+  , isKnownUser : Bool
+  , cartId : String
   }
 
 

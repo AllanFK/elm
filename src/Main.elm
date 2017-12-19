@@ -35,7 +35,7 @@ init flags =
     ( Model flags 
       (Urls productUrl) 
       (ProductItemList []) 
-      (AddToCartResponse "url")
+      (AddToCartResult "" False "")
     , sendProductsRequest flags)
  
 
@@ -49,16 +49,16 @@ init flags =
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        Response (Ok response) ->
-            ( { model | response = response }, check response.productItemList )
+        ProductsResponse (Ok response) ->
+            ( { model | productsResult = response }, check response.productItemList )
 
-        Response (Err _) ->
+        ProductsResponse (Err _) ->
             ( model, Cmd.none )
 
-        ATCResponse (Ok response) ->
+        AddToCartResponse (Ok response) ->
             ( model , Cmd.none )
 
-        ATCResponse (Err _) ->
+        AddToCartResponse (Err _) ->
             ( model, Cmd.none )
 
         AddToCart flags product ->
@@ -75,7 +75,7 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div [] 
-        (List.map (getTemplate model) model.response.productItemList)
+        (List.map (getTemplate model) model.productsResult.productItemList)
               
 
 

@@ -22,14 +22,14 @@ addToCartUrl = "https://96eg5oo6fb.execute-api.eu-west-1.amazonaws.com/Prod/api/
 
 sendAddToCartRequest : Flags -> Product -> Cmd Msg
 sendAddToCartRequest flags product =
-    Http.send Model.ATCResponse (requestAddToCart flags product)
+    Http.send AddToCartResponse (requestAddToCart flags product)
   
 
 
 
 
 
-requestAddToCart : Flags -> Product -> Http.Request AddToCartResponse
+requestAddToCart : Flags -> Product -> Http.Request AddToCartResult
 requestAddToCart flags product = 
     Http.request 
         { method = "POST"
@@ -45,12 +45,14 @@ requestAddToCart flags product =
 
 
 
-decodeAddToCart : Decoder AddToCartResponse
+decodeAddToCart : Decoder AddToCartResult
 decodeAddToCart =
-    decode AddToCartResponse
-        |> required "url" Decode.string
-        
-
+    decode AddToCartResult
+        |> required "cartUrl" Decode.string
+        |> required "isKnownUser" Decode.bool
+        |> required "cartId" Decode.string
+ 
+ 
 
 
 

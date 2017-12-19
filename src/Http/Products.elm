@@ -22,7 +22,7 @@ productUrl = "https://96eg5oo6fb.execute-api.eu-west-1.amazonaws.com/Prod/api/v1
 
 sendProductsRequest : Flags -> Cmd Msg
 sendProductsRequest flags =
-    Http.send Model.Response (requestProducts flags)
+    Http.send ProductsResponse (requestProducts flags)
   
 
 
