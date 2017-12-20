@@ -7,7 +7,7 @@ import Http.Products exposing (..)
 import Http.AddToCart exposing (..)
 import Ports exposing (..)
 import View.Templates exposing (getTemplate)
- 
+import Update.Buttons exposing (updateButtonText)
 
 
 
@@ -61,25 +61,11 @@ update msg model =
             ( model, Cmd.none )
 
         AddToCart flags product ->
-            ( (updateButtonText model.productsResult.productItemList product.assetId), sendAddToCartRequest flags product )
-
-        
-       
+            ( { model | productsResult = (updateButtonText model product.assetId) }, sendAddToCartRequest flags product )
 
 
-updateButtonText list assetId =
-    let
-        removeText product =
-            if product.assetId == assetId then
-               { product | buttonText = "" }
-            else
-               { product | buttonText = "hej" }
-        
-    in
-        List.map removeText list
 
 
-        
 
 -- VIEW
 
