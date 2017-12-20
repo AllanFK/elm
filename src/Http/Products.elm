@@ -75,8 +75,9 @@ decodeProduct =
         |> required "productTranslation" decodeTranslation
         |> required "formatGroupKey" Decode.string
         |> required "articleType" Decode.string
+        |> hardcoded "Add to carts"
 
-        
+
 
 
 

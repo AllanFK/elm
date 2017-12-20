@@ -2,7 +2,6 @@ module Main exposing (..)
 
 
 import Html exposing (..)
-import Html.Events exposing (..)
 import Model exposing (..)
 import Http.Products exposing (..)
 import Http.AddToCart exposing (..)
@@ -56,17 +55,31 @@ update msg model =
             ( model, Cmd.none )
 
         AddToCartResponse (Ok response) ->
-            ( model , Cmd.none )
+            ( model, Cmd.none )
 
         AddToCartResponse (Err _) ->
             ( model, Cmd.none )
 
         AddToCart flags product ->
-            ( model, sendAddToCartRequest flags product )
+            ( (updateButtonText model.productsResult.productItemList product.assetId), sendAddToCartRequest flags product )
 
         
        
 
+
+updateButtonText list assetId =
+    let
+        removeText product =
+            if product.assetId == assetId then
+               { product | buttonText = "" }
+            else
+               { product | buttonText = "hej" }
+        
+    in
+        List.map removeText list
+
+
+        
 
 -- VIEW
 

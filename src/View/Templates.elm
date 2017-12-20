@@ -1,9 +1,8 @@
 module View.Templates exposing (..)
 
+
 import Model exposing (..)
 import Html exposing (..)
-import Html.Attributes exposing (class, style)
-import Html.Events exposing (onClick)
 import Dict
 import View.Portrait exposing (standardPortrait)
 import View.Landscape exposing (standardLandscape)

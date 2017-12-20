@@ -51,6 +51,9 @@ type alias AddToCartResult =
   }
 
 
+type alias ProductElements =
+  { buttonText : String
+  }
 
 
 -- PRODUCT ITEM LIST
@@ -80,6 +83,7 @@ type alias Product =
   , productTranslation : Translation
   , formatGroupKey : String
   , articleType : String
+  , buttonText: String
   -- , additionalData : Maybe
 }
 

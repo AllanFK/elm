@@ -33,12 +33,11 @@ standardPortrait model =
                         ]
                     ]
                 , text "Discount box"
-                , button [ class "xsellfrontend-standard-portrait-add-to-basket-button button tertiary", attribute "data-tam" "add_to_cart_button", onClick (AddToCart model.flags product) ]
+                , button [ class "xsellfrontend-standard-portrait-add-to-basket-button button tertiary", onClick (AddToCart model.flags product) ]
                     [ span []
-                        [ text "Add to cart" ]
+                        [ text product.buttonText ]
                     ]
                 , div [ class "xsellfrontend-standard-portrait-bottom-text" ]
                     [ text "View more" ]
                 ]
             ]
-
